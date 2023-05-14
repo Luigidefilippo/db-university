@@ -41,3 +41,13 @@ AND `date` = "2020-06-20";
     SELECT * 
     FROM `degrees`
     WHERE `level` = "magistrale";
+    à
+
+7.
+    SELECT COUNT(*) as `departments_num`
+    FROM departments
+    
+8.
+SELECT COUNT(`name`) 
+FROM `teachers`
+WHERE `phone` IS NULL;
