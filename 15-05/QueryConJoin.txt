@@ -22,3 +22,22 @@ FROM `degrees`
 JOIN `department`
 ON `degrtees` . `department_id` = `departments` . `id`
 WHERE `degrees`.`level` = `magistrale`;
+
+3.
+SELECT `teachers`.`id`, `teachers`.`name`, `teachers`.`surname` , `courses`.`name` AS `course_name`
+FROM `courses`
+JOIN `course_teacher`
+ON  `courses`.`id`=`course_teacher`.`course_id`
+JOIN `teachers`
+ON `course_teacher`.`teacher_id` = `teachers`.`id`
+WHERE `teachers`.`name` = 'Fulvio'
+AND `teachers`.`surname` = 'Amato';
+
+4.
+SELECT `students`.`name`, `students`.`surname`, `degrees`.`name`, `departments`.`name`
+FROM `students`
+JOIN `degrees`
+ON `students`.`degree_id` = `degrees`.`id`
+JOIN `departments`
+ON `degrees`.`department_id`= `departments`.`id`
+ORDER BY `students`.`surname` ASC
