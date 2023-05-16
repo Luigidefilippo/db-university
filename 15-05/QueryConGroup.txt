@@ -17,4 +17,14 @@ SELECT COUNT (*) AS `teachers_num` , `office_address`
 FROM `teachers`
 GROUP BY `office_address`
 
+3.
+SELECT ROUND(AGV(`vote`), 2) AS `vote_sg`, `exam_id`
+FROM `exam_student`
+GROUP BY `exam_id`
 
+4.
+SELECT `departments`.`name`, COUNT(`degrees`.`id`) AS `total_courses`
+FROM `departments`
+JOIN `degrees`
+ON `departments`.`id` = `degrees`.`department_id`
+GROUP BY `departments`.`name`
